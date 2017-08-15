@@ -6,11 +6,12 @@ import java.awt.*;
  */
 public class DrawPanel extends JPanel {
 
-    static final int COL = 30;
-    static final int ROW = 30;
-    static final int PIXEL_SIZE = 20;
+   static final int COL = 32;
+   static final int ROW = 32;
+   static final int PIXEL_SIZE = 20;
+
     final Color NOFILL = Color.BLACK;
-    final Color FILL = Color.WHITE;
+    final Color FILL = Color.BLUE;
     final Color BLOCK = Color.GRAY;
 
     Color grid[][] = new Color[ROW][COL];
@@ -29,7 +30,7 @@ public class DrawPanel extends JPanel {
 
     public void paintComponent(Graphics g){
         Graphics2D g2 = (Graphics2D) g;
-        g2.setColor(Color.BLUE);
+        g2.setColor(Color.WHITE);
         g2.fillRect(0,0,getWidth(),getHeight());
 
         // Fill in Blocks
@@ -49,7 +50,7 @@ public class DrawPanel extends JPanel {
         }
 
         // Grid Outline
-        g2.setColor(Color.WHITE);
+        g2.setColor(Color.GREEN);
         g2.drawRect(0,0,COL * PIXEL_SIZE, ROW * PIXEL_SIZE);
 
     }

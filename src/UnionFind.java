@@ -27,6 +27,19 @@ public class UnionFind {
     public boolean connected(int p, int q){
         return root(p) == root(q);
     }
+
+    public boolean checkSize(int y, int x){
+        if(y == 0)
+            return true;
+
+        int p = y * width + x;
+        for(int i = 0; i < width; i++){
+            if(root(p) == root(i))
+                return true;
+        }
+        return false;
+    }
+
     public void union(int y1, int x1, int y2, int x2){
         int p = y1 * width + x1;
         int q = y2 * width + x2;
