@@ -40,6 +40,12 @@ public class UnionFind {
         return false;
     }
 
+    public void initialize(){
+        for(int i = 0; i < width * height; i++){
+            id[i] = i;
+            sz[i] = 0;
+        }
+    }
     public void union(int y1, int x1, int y2, int x2){
         int p = y1 * width + x1;
         int q = y2 * width + x2;

@@ -10,11 +10,11 @@ public class DrawPanel extends JPanel {
    static final int ROW = 32;
    static final int PIXEL_SIZE = 20;
 
-    final Color NOFILL = Color.BLACK;
-    final Color FILL = Color.BLUE;
-    final Color BLOCK = Color.GRAY;
+    final Color NOFILL = Color.WHITE;
+    final Color FILL = Color.CYAN;
+    final Color BLOCK = Color.BLACK;
 
-    Color grid[][] = new Color[ROW][COL];
+    static Color grid[][] = new Color[ROW][COL];
 
     public DrawPanel(){
         // Initialize all of the blocks
@@ -23,8 +23,6 @@ public class DrawPanel extends JPanel {
                 grid[i][j] = BLOCK;
             }
         }
-
-
 
     }
 
@@ -41,7 +39,7 @@ public class DrawPanel extends JPanel {
             }
         }
         // Draw Grid lines
-        g2.setColor(Color.WHITE);
+        g2.setColor(Color.BLACK);
         for(int i = 0; i < ROW; i ++){
             for(int j = 0; j < COL; j++){
                 g2.drawLine(0, i * PIXEL_SIZE, PIXEL_SIZE * COL, i * PIXEL_SIZE);
@@ -50,7 +48,7 @@ public class DrawPanel extends JPanel {
         }
 
         // Grid Outline
-        g2.setColor(Color.GREEN);
+        g2.setColor(Color.BLACK);
         g2.drawRect(0,0,COL * PIXEL_SIZE, ROW * PIXEL_SIZE);
 
     }
